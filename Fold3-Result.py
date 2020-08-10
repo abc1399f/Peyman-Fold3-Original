@@ -350,7 +350,7 @@ def f1_score_report(y_true, y_pred, _id):
     
 def report(y_true, y_pred):
     '''
-    list= [ 'X', '[CLS]', '[SEP]', 'O', 'I-loc', 'B-pers', 'I-pers', 'I-org', 'I-pro', 'B-pro','I-fac','B-fac', 'B-loc', 'B-org', 'B-event', 'I-event']
+    list= [ 'X', '[CLS]', '[SEP]', 'O', 'I-LOC', 'B-PER', 'I-PER', 'I-ORG', 'I-TIM', 'B-TIM','I-DAT','B-DAT', 'B-LOC', 'B-ORG', 'B-MON', 'I-MON', 'B-PCT', 'I-PCT']
     '''
     p, r, f= f1_score_report(y_true, y_pred, 4)
     print("precision, recall, F1 for I-loc", p, r, f)
