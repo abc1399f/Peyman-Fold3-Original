@@ -182,7 +182,7 @@ class CoNLLDataProcessor(DataProcessor):
     '''
 
     def __init__(self):
-        self._label_types = [ 'X','[CLS]', '[SEP]', 'O', 'I-loc', 'B-pers', 'I-pers', 'I-org', 'I-pro', 'B-pro','I-fac','B-fac', 'B-loc', 'B-org', 'B-event', 'I-event']
+        self._label_types = [ 'X', '[CLS]', '[SEP]', 'O', 'I-LOC', 'B-LOC', 'I-PER', 'I-PER', 'I-ORG', 'B-ORG','I-TIM','B-TIM', 'B-DAT', 'B-DAT', 'B-MON', 'I-MON', 'B-PCT', 'I-PCT']
         self._num_labels = len(self._label_types)
         self._label_map = {label: i for i,
                            label in enumerate(self._label_types)}
