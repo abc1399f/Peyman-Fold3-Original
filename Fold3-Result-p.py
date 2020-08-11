@@ -860,7 +860,7 @@ def evaluate(model, predict_dataloader, batch_size, epoch_th, dataset_name):
     print("all preds",all_preds)
     all_labels_convert=[]
     all_preds_convert=[]
-    label_list = [ 'X', '[CLS]', '[SEP]', 'O', 'I-loc', 'B-pers', 'I-pers', 'I-org', 'I-pro', 'B-pro','I-fac','B-fac', 'B-loc', 'B-org', 'B-event', 'I-event']
+    label_list = [ 'X', '[CLS]', '[SEP]', 'O', 'I_LOC', 'B_LOC', 'B_PER', 'I_PER', 'I_ORG', 'B_ORG','I_TIM','B_TIM', 'B_DAT', 'I_DAT', 'B_MON', 'I_MON', 'B_PCT', 'I_PCT']
     label_map = {i : label for i, label in enumerate(label_list)}
     for j in range (len(all_labels)):
         all_labels_convert.append(label_map[all_labels[j]])
