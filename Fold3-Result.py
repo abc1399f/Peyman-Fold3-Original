@@ -355,31 +355,31 @@ def report(y_true, y_pred):
     p, r, f= f1_score_report(y_true, y_pred, 4)
     print("precision, recall, F1 for I-loc", p, r, f)
     
-    p, r, f= f1_score_report(y_true, y_pred, 12)
+    p, r, f= f1_score_report(y_true, y_pred, 5)
     print("precision, recall, F1 for B-loc", p, r, f)     
     
-    p, r, f= f1_score_report(y_true, y_pred, 5)
+    p, r, f= f1_score_report(y_true, y_pred, 6)
     print("precision, recall, F1 for B-pers", p, r, f)
     
-    p, r, f= f1_score_report(y_true, y_pred, 6)
+    p, r, f= f1_score_report(y_true, y_pred, 7)
     print("precision, recall, F1 for I-pers", p, r, f)
     
-    p, r, f= f1_score_report(y_true, y_pred, 7)
+    p, r, f= f1_score_report(y_true, y_pred, 8)
     print("precision, recall, F1 for I-org", p, r, f)
     
-    p, r, f= f1_score_report(y_true, y_pred, 13)
+    p, r, f= f1_score_report(y_true, y_pred, 9)
     print("precision, recall, F1 for B-org", p, r, f)
     
-    p, r, f= f1_score_report(y_true, y_pred, 8)
+    p, r, f= f1_score_report(y_true, y_pred, 10)
     print("precision, recall, F1 for I-pro", p, r, f)
     
-    p, r, f= f1_score_report(y_true, y_pred, 9)
+    p, r, f= f1_score_report(y_true, y_pred, 11)
     print("precision, recall, F1 for B-pro", p, r, f) 
     
-    p, r, f= f1_score_report(y_true, y_pred, 10)
+    p, r, f= f1_score_report(y_true, y_pred, 12)
     print("precision, recall, F1 for I-fac", p, r, f)
     
-    p, r, f= f1_score_report(y_true, y_pred, 11)
+    p, r, f= f1_score_report(y_true, y_pred, 13)
     print("precision, recall, F1 for B-fac", p, r, f)   
  
        
@@ -389,6 +389,11 @@ def report(y_true, y_pred):
     p, r, f= f1_score_report(y_true, y_pred, 15)
     print("precision, recall, F1 for I-event", p, r, f)  
     
+    p, r, f= f1_score_report(y_true, y_pred, 16)
+    print("precision, recall, F1 for I-event", p, r, f)
+    
+    p, r, f= f1_score_report(y_true, y_pred, 17)
+    print("precision, recall, F1 for I-event", p, r, f)
 def f1_score(y_true, y_pred):
     '''
     0,1,2,3 are [CLS],[SEP],[X],O
