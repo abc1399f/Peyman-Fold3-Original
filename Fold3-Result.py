@@ -182,7 +182,7 @@ class CoNLLDataProcessor(DataProcessor):
     '''
 
     def __init__(self):
-        self._label_types = [ 'X', '[CLS]', '[SEP]', 'O', 'I_LOC', 'B_LOC', 'B_PER', 'I_PER', 'I_ORG', 'B_ORG','I_TIM','B_TIM', 'B_DAT', 'I_DAT', 'B_MON', 'I_MON', 'B_PCT', 'I_PCT']
+        self._label_types =[ 'X', '[CLS]', '[SEP]', 'O', 'B_LOC', 'I_LOC', 'B_PER', 'I_PER', 'B_ORG', 'I_ORG','B_TIM','I_TIM', 'B_DAT', 'I_DAT', 'B_MON', 'I_MON', 'B_PCT', 'I_PCT']
         self._num_labels = len(self._label_types)
         self._label_map = {label: i for i,
                            label in enumerate(self._label_types)}
@@ -348,52 +348,69 @@ def f1_score_report(y_true, y_pred, _id):
     return precision, recall, f1
     
     
+    
 def report(y_true, y_pred):
     '''
-    list= [ 'X', '[CLS]', '[SEP]', 'O', 'I-LOC', 'B-PER', 'I-PER', 'I-ORG', 'I-TIM', 'B-TIM','I-DAT','B-DAT', 'B-LOC', 'B-ORG', 'B-MON', 'I-MON', 'B-PCT', 'I-PCT']
+    list= [ 'X', '[CLS]', '[SEP]', 'O', 'B_LOC', 'I_LOC', 'B_PER', 'I_PER', 'B_ORG', 'I_ORG','B_TIM','I_TIM', 'B_DAT', 'I_DAT', 'B_MON', 'I_MON', 'B_PCT', 'I_PCT']
+        self._num_labels = len(self._label_types)
     '''
+    
     p, r, f= f1_score_report(y_true, y_pred, 4)
-    print("precision, recall, F1 for I-loc", p, r, f)
-    
+    print("precision, recall, F1 for B_LOC", p, r, f)
+
+
     p, r, f= f1_score_report(y_true, y_pred, 5)
-    print("precision, recall, F1 for B-loc", p, r, f)     
-    
+    print("precision, recall, F1 for I_LOC", p, r, f)     
+
+        
     p, r, f= f1_score_report(y_true, y_pred, 6)
-    print("precision, recall, F1 for B-pers", p, r, f)
+    print("precision, recall, F1 for B_PER", p, r, f)
+
     
     p, r, f= f1_score_report(y_true, y_pred, 7)
-    print("precision, recall, F1 for I-pers", p, r, f)
+    print("precision, recall, F1 for I_PER", p, r, f)
+
     
     p, r, f= f1_score_report(y_true, y_pred, 8)
-    print("precision, recall, F1 for I-org", p, r, f)
+    print("precision, recall, F1 for B_ORG", p, r, f)
+
     
     p, r, f= f1_score_report(y_true, y_pred, 9)
-    print("precision, recall, F1 for B-org", p, r, f)
+    print("precision, recall, F1 for I_ORG", p, r, f)
+
     
     p, r, f= f1_score_report(y_true, y_pred, 10)
-    print("precision, recall, F1 for I-pro", p, r, f)
+    print("precision, recall, F1 for B_TIM", p, r, f)
+
     
     p, r, f= f1_score_report(y_true, y_pred, 11)
-    print("precision, recall, F1 for B-pro", p, r, f) 
+    print("precision, recall, F1 for I_TIM", p, r, f) 
+
     
     p, r, f= f1_score_report(y_true, y_pred, 12)
-    print("precision, recall, F1 for I-fac", p, r, f)
+    print("precision, recall, F1 for B_DAT", p, r, f)
+
     
     p, r, f= f1_score_report(y_true, y_pred, 13)
-    print("precision, recall, F1 for B-fac", p, r, f)   
+    print("precision, recall, F1 for I_DAT", p, r, f)   
+
  
        
     p, r, f= f1_score_report(y_true, y_pred, 14)
-    print("precision, recall, F1 for B-event", p, r, f)   
+    print("precision, recall, F1 for B_MON", p, r, f)   
+
     
     p, r, f= f1_score_report(y_true, y_pred, 15)
-    print("precision, recall, F1 for I-event", p, r, f)  
+    print("precision, recall, F1 for I_MON", p, r, f)  
+    
     
     p, r, f= f1_score_report(y_true, y_pred, 16)
-    print("precision, recall, F1 for I-event", p, r, f)
+    print("precision, recall, F1 for B_PCT", p, r, f)  
+    
     
     p, r, f= f1_score_report(y_true, y_pred, 17)
-    print("precision, recall, F1 for I-event", p, r, f)
+    print("precision, recall, F1 for I_PCT", p, r, f)  
+    
 def f1_score(y_true, y_pred):
     '''
     0,1,2,3 are [CLS],[SEP],[X],O
